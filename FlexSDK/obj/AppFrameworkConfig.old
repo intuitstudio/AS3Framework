@@ -16,7 +16,7 @@
     </define>
     <define append="true">
       <name>CONFIG::timeStamp</name>
-      <value>'2013/5/21'</value>
+      <value>'2013/6/29'</value>
     </define>
     <define append="true">
       <name>CONFIG::air</name>
@@ -32,16 +32,17 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\IntuitStudio\Working\AS3\projects\framework\FlexSDK\src</path-element>
-      <path-element>C:\IntuitStudio\Working\AS3\projects\framework\FlexSDK\classes</path-element>
+      <path-element>C:\working\AppServ\GitHub\AS3Framework\FlexSDK\src</path-element>
+      <path-element>C:\working\AppServ\GitHub\AS3Framework\FlexSDK\classes</path-element>
+      <path-element>C:\Program Files (x86)\Adobe\Adobe Flash CS5\Common\Configuration\Component Source\ActionScript 3.0</path-element>
       <path-element>C:\working\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>C:\IntuitStudio\Working\AS3\projects\framework\FlexSDK\lib\launcher.swc</path-element>
+      <path-element>C:\working\AppServ\GitHub\AS3Framework\FlexSDK\lib\launcher.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\IntuitStudio\Working\AS3\projects\framework\FlexSDK\src\com\intuitStudio\projects\appFramework\Main.as</path-element>
+    <path-element>C:\working\AppServ\GitHub\AS3Framework\FlexSDK\src\com\intuitStudio\projects\appFramework\Main.as</path-element>
   </file-specs>
   <default-background-color>#FFFFFF</default-background-color>
   <default-frame-rate>30</default-frame-rate>
