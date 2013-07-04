@@ -1,26 +1,12 @@
 ﻿package com.intuitStudio.projects.appFramework
 {	
-	import flash.display.Graphics;
-	import flash.display.Sprite;
-	import flash.display.MovieClip;
-	import flash.display.DisplayObject;
-	import flash.display.DisplayObjectContainer;
-	import flash.display.Stage;
-	
-	import flash.ui.Keyboard;
-	import flash.ui.Mouse;
-	import flash.ui.MouseCursor;
-	import flash.geom.Point;
-	import flash.geom.Vector3D;
-	import flash.events.Event;
-	import flash.events.FocusEvent;
-	import flash.events.KeyboardEvent;
-	import flash.events.MouseEvent;	
-	import flash.events.TouchEvent;	
+	import flash.display.*;	
+	import flash.ui.*;
+	import flash.geom.*;
+	import flash.events.*;
 	import flash.errors.IllegalOperationError;
 	
-	import flash.net.URLRequest;
-	import flash.net.navigateToURL;
+	import flash.net.*;
 	import flash.utils.getDefinitionByName;
 	import flash.external.ExternalInterface;
 	
@@ -29,10 +15,8 @@
 	import com.intuitStudio.framework.managers.classes.ClassResolverSingleton;
 	import com.intuitStudio.common.factories.abstracts.AssetsFB;
 	import com.intuitStudio.projects.appFramework.factories.Assets;
-    import com.intuitStudio.biMotion.core.Point2d;
-	import com.intuitStudio.biMotion.core.Vector2d;
-	import com.intuitStudio.triMotion.core.Point3d;
-	import com.intuitStudio.triMotion.core.Vector3;
+    import com.intuitStudio.biMotion.core.*;
+	import com.intuitStudio.triMotion.core.*;
 	//tools
 	import com.intuitStudio.loaders.core.SafeLoaderWrapper;
 	import com.intuitStudio.utils.*;
@@ -40,15 +24,9 @@
 	import com.intuitStudio.interactions.commands.concretes.*;
 	import com.intuitStudio.interactions.commands.interfaces.ICommand;
 	
-	import aeon.animators.Tweener;
-	import aeon.animators.Transformer3D;
-	import aeon.AnimationSequence;
-	import aeon.AnimationComposite;
-	
-	import aeon.easing.Quad;
-	import aeon.easing.Bounce;
-	import aeon.easing.Elastic;
-	import aeon.easing.Sine;
+	import aeon.animators.*;
+	import aeon.*;
+	import aeon.easing.*;
 	import aeon.events.AnimationEvent;
 	
 	public class GameMain extends GameInstance
@@ -57,8 +35,7 @@
 		private var assetLoader:SafeLoaderWrapper;
 		private var currentApp:MovieClip;
 		private var currentGame:MovieClip;
-		private var defaultDuration:Number = 800;
-		
+		private var defaultDuration:Number = 800;		
 		private var assetFc:Assets;
 		
 		
@@ -77,7 +54,7 @@
 		{
 			//TODO lauch application
 	
-			Assets.register();
+			//Assets.register();
 
 				
 			//--------------------
@@ -102,9 +79,10 @@
 		}		
 		
 		
-		
-		
-		
+		/**
+		 * time-based frameloop handler
+		 * 
+		 */		
 		override protected function gameStep(frameMs:Number):void
 		{
 			if (playingNow)
@@ -148,12 +126,6 @@
 			return point;
 		}
 		
-		private function createVector():void
-		{
-			var v2:Vector2d = new Vector2d(100, 100);
-			v2.rendering(contentLayer);
-		} 
-		
 		//-----------------------------------------------
 		
 		private function makeTestSafeLoader(url:String):void
@@ -179,13 +151,6 @@
 		
 		private function clearContent():void
 		{
-			trace('clear ', contentLayer.numChildren, currentApp);
-			//for (var i:int=contentLayer.numChildren-1; i>=0; i--)
-			//{
-			//var item:DisplayObject = contentLayer.getChildAt(i) as DisplayObject;
-			//contentLayer.removeChild (item);
-			//}
-			
 			if (currentApp)
 			{
 				if (currentApp.hasOwnProperty('dispose'))
@@ -269,8 +234,6 @@
 		{
 			clearContent();
 		}
-		
-
 				
 		//---------------------------------------------------------;
 		private function checkBounds(obj:*):void
@@ -350,8 +313,7 @@
 		
 		private function onReleaseMouse(e:MouseEvent):void
 		{
-			Mouse.cursor = MouseCursor.ARROW;
-
+			//Mouse.cursor = MouseCursor.ARROW;
 			stopDrag();
 			stage.removeEventListener(MouseEvent.MOUSE_UP, onReleaseMouse);
 		}
