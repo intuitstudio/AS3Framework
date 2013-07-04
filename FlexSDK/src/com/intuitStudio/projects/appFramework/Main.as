@@ -28,9 +28,8 @@ package com.intuitStudio.projects.appFramework
 	import flash.utils.getDefinitionByName;
 	import flash.display.StageScaleMode;
 	
-	[SWF(width="1000",height="700",frameRate="30",backgroundColor="#cccccc")]
+	[SWF(width="800",height="600",frameRate="30",backgroundColor="#cccccc")]
 	[Frame(factoryClass='com.intuitStudio.projects.appFramework.AppPreloader')] //class name of your preloader
-	
 	public class Main extends DocumentMain
 	{
 		
